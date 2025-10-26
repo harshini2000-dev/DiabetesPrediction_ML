@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FORM</title>
+	<link rel="stylesheet" href="static/mystyle.css">
+	<script type="text/javascript">
+	function validate()
+ 	{
+	var x2 = document.forms["myForm"]["entry2"].value;
+	var x3 = document.forms["myForm"]["entry3"].value;
+	var x4 = document.forms["myForm"]["entry4"].value;
+	var x5 = document.forms["myForm"]["entry5"].value;
+	var x6 = document.forms["myForm"]["entry6"].value;
+	var x7 = document.forms["myForm"]["entry7"].value;
+	var x8 = document.forms["myForm"]["entry8"].value;
+	return true;
+ 	}
+	</script>
+</head>
+<body style="background-color:Lavender;"><center>
+<form  name="myForm" action = "http://localhost:9999/result" method = "POST" onsubmit="return validate()">
+	<h2>PATIENT REPORT</h2>
+	<table class="center">
+		<tr>
+			<td>Glucose </td>
+			<td><input type="text" id="entry2" name="entry2" required></td>
+		</tr>
+
+		<tr>
+			<td>Blood Pressure</td>
+			<td><input type="text" id="entry3" name="entry3" required></td>
+		</tr>
+
+		<tr>
+			<td>Skin Thickness</td>
+			<td><input type="text" id="entry4" name="entry4" required></td>
+		</tr>
+		<tr>
+			<td>Insulin</td>
+			<td><input type="text" id="entry5" name="entry5" required></td>
+		</tr>
+		<tr>
+			<td>BMI </td>
+			<td><input type="text" id="entry6" name="entry6" required></td>
+		</tr>
+		<tr>
+			<td>Diabetes Pedigree Function</td>
+			<td><input type="text" id="entry7" name="entry7" required></td>
+		</tr>
+		<tr>
+			<td>Age</td>
+			<td><input type="text" id="entry8" name="entry8" required></td>
+		</tr>
+		</table>
+		<div>
+			<input type="submit" value="SUBMIT" onclick="validate()" style="align-self: center;"
+			class="button">
+		</div>
+</form>
+</center>
+</body>
+</html>

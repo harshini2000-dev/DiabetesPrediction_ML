@@ -1,0 +1,32 @@
+body{
+	font-family: Georgia;
+	font-size: 20px;
+	background-image: url("pink.jpg");
+	/*height: 100%;
+	margin: 0;
+	background-position: center;*/
+  	background-repeat: no-repeat;
+  	background-size: 100%;
+}
+table {
+  	border: 0px solid;
+
+}
+
+td {
+	padding: 10px;
+}
+
+.center {
+	margin-left: auto;
+  	margin-right: auto;
+}
+.button{
+	padding: 10px 15px;
+	font-size: 15px;
+	font-weight: bold;
+}
+input[type=text] {
+  padding: 5px;
+  border: 1px solid;
+}

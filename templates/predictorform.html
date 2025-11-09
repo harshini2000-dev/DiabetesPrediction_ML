@@ -4,52 +4,88 @@
 	<title>FORM</title>
 	<link rel="stylesheet" href="static/mystyle.css">
 	<script type="text/javascript">
-	function validate()
- 	{
-	var x2 = document.forms["myForm"]["entry2"].value;
-	var x3 = document.forms["myForm"]["entry3"].value;
-	var x4 = document.forms["myForm"]["entry4"].value;
-	var x5 = document.forms["myForm"]["entry5"].value;
-	var x6 = document.forms["myForm"]["entry6"].value;
-	var x7 = document.forms["myForm"]["entry7"].value;
-	var x8 = document.forms["myForm"]["entry8"].value;
-	return true;
- 	}
+
+		function GetGender()
+		{
+			preg = document.getElementById('preg_row');
+			entry1 = document.getElementById('entry1');
+			gendervalue = document.querySelector('input[name="GenderRadio"]:checked').value;
+
+			if(gendervalue == 'Male')
+			{
+				preg.style.display = 'none';
+				entry1.style.display = 'none'
+			}
+			else{
+				preg.style.display = 'block';
+			 	entry1.style.display = 'block'
+			}
+		}
+
+		function validate()
+		{
+			var x1 = String(document.forms["myForm"]["entry1"].value);
+			var x2 = String(document.forms["myForm"]["entry2"].value);
+			var x3 = String(document.forms["myForm"]["entry3"].value);
+			var x4 = String(document.forms["myForm"]["entry4"].value);
+			var x5 = String(document.forms["myForm"]["entry5"].value);
+			var x6 = String(document.forms["myForm"]["entry6"].value);
+			var x7 = String(document.forms["myForm"]["entry7"].value);
+			var x8 = String(document.forms["myForm"]["entry8"].value);
+			return true;
+		}
 	</script>
 </head>
-<body style="background-color:Lavender;"><center>
+
+<body style="background-color:Lavender;">
+<center>
 <form  name="myForm" action = "http://localhost:9999/result" method = "POST" onsubmit="return validate()">
 	<h2>PATIENT REPORT</h2>
 	<table class="center">
 		<tr>
+			<td>Gender</td>
+			<td>
+				<input type="radio" id="femaleID" name="GenderRadio" value="Female" checked onclick="GetGender()">
+				<label for="Female">Female</label>
+			</td>
+			<td>
+				<input type="radio" id="maleID" name="GenderRadio" value="Male" onclick="GetGender()">
+				<label for="Male">Male</label><br>
+			</td>
+		</tr>
+        <tr>
+			<td> <span id="preg_row">Pregnancies</span> </td>
+			<td> <input type="number" id="entry1" name="entry1" min="0" max="10" placeholder="0" value="0"  required></td>
+		</tr>
+		<tr>
 			<td>Glucose </td>
-			<td><input type="text" id="entry2" name="entry2" required></td>
+			<td><input type="number" id="entry2" name="entry2" placeholder="130" required></td>
 		</tr>
 
 		<tr>
 			<td>Blood Pressure</td>
-			<td><input type="text" id="entry3" name="entry3" required></td>
+			<td><input type="number" id="entry3" name="entry3" placeholder="60" required></td>
 		</tr>
 
 		<tr>
 			<td>Skin Thickness</td>
-			<td><input type="text" id="entry4" name="entry4" required></td>
+			<td><input type="text" id="entry4" name="entry4" placeholder="30" required></td>
 		</tr>
 		<tr>
 			<td>Insulin</td>
-			<td><input type="text" id="entry5" name="entry5" required></td>
+			<td><input type="number" id="entry5" name="entry5" placeholder="120" required></td>
 		</tr>
 		<tr>
 			<td>BMI </td>
-			<td><input type="text" id="entry6" name="entry6" required></td>
+			<td><input type="text" id="entry6" name="entry6" placeholder="33.5" required></td>
 		</tr>
 		<tr>
 			<td>Diabetes Pedigree Function</td>
-			<td><input type="text" id="entry7" name="entry7" required></td>
+			<td><input type="text" id="entry7" name="entry7" placeholder="0.127" required></td>
 		</tr>
 		<tr>
 			<td>Age</td>
-			<td><input type="text" id="entry8" name="entry8" required></td>
+			<td><input type="number" id="entry8" name="entry8" min="5" max="100" placeholder="30" required></td>
 		</tr>
 		</table>
 		<div>

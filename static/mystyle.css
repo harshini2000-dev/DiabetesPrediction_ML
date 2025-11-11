@@ -1,6 +1,6 @@
 body{
 	font-family: Georgia;
-	font-size: 20px;
+	font-size: 18px;
 	background-image: url("pink.jpg");
   	background-repeat: no-repeat;
   	background-size: 100%;
@@ -9,7 +9,7 @@ table {
   	border: 0px solid;
 }
 td {
-	padding: 10px;
+	padding: 5px;
 }
 .center {
 	margin-left: auto;
@@ -27,4 +27,5 @@ input[type=text] {
 input[type=number]{
   padding: 5px;
   border: 1px solid;
+  width: 40%
 }

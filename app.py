@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 
 # Load and preprocess dataset
-diabetes_dataset = pd.read_csv('processed-diabetes-dataset.csv')
+diabetes_dataset = pd.read_csv('diabetes-dataset.csv')
 
 # Separate features and target
 X = diabetes_dataset.drop(columns='Outcome', axis=1)
@@ -27,7 +27,7 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 )
 
 # Train the SVM model
-classifier = svm.SVC(kernel='rbf', C=100, gamma='auto', class_weight='balanced')
+classifier = svm.SVC(kernel='rbf', C=100, gamma='scale', class_weight='balanced')
 classifier.fit(X_train, Y_train)
 
 # Evaluate model performance
